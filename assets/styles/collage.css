@@ -332,7 +332,20 @@ body{
 @media (max-width: 800px) {
     body { padding: 40px 20px 60px; }
 
+    .header {
+        margin-left: 0;
+        text-align: center;
+    }
+
     .header h1 { font-size: 48px; }
+
+    .header p { margin-right: 0; }
+
+    /* Скриваме сърцата на мобилен - объркват layout-а */
+    .heartImg, .heartImg1, .heartImg2,
+    .heartImg3, .heartImg4, .heartImg5 {
+        display: none;
+    }
 
     /* На телефон - нормален поток вместо absolute */
     .board {
@@ -342,6 +355,7 @@ body{
         flex-direction: column;
         align-items: center;
         gap: 32px;
+        margin-left: 0;
     }
 
     .photo {
@@ -358,5 +372,16 @@ body{
         transform: none !important;
     }
 
-    .backBtn { margin-top: 60px;}
+    .backBtn { margin-top: 60px; }
+}
+
+/* ===========================
+   ULTRAWIDE (1600px+)
+=========================== */
+
+@media (min-width: 1600px) {
+    .board {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
