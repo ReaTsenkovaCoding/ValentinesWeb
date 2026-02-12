@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Sofia+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel = "stylesheet" href = "assets/styles/collage.css"/>
+    <title>Нашите спомени 📸</title>
+</head>
+
+<body>
+    <div class = "header">
+        <h1>Нашите спомени 💕</h1>
+        <p>Моменти, които пазя в сърцето си</p>
+    </div>
+
+    <img src = "assets/gifs&pics/snimki/heart.png" alt = "heart" class = "heartImg"/>
+    <img src = "assets/gifs&pics/snimki/heart.png" alt = "heart" class = "heartImg1"/>
+    <img src = "assets/gifs&pics/snimki/heart.png" alt = "heart" class = "heartImg2"/>
+    <img src = "assets/gifs&pics/snimki/heart.png" alt = "heart" class = "heartImg3"/>
+    <img src = "assets/gifs&pics/snimki/heart.png" alt = "heart" class = "heartImg4"/>
+    <img src = "assets/gifs&pics/snimki/heart.png" alt = "heart" class = "heartImg5"/>
+
+    <div class = "board">
+        <!--СНИМКИ-->
+
+        <div class="photo p1"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka1.jpg" alt="Снимка 1"></div><div class="photo-caption">Happy Bar & Grill😋</div></div>
+        <div class="photo p2"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka2.jpg" alt="Снимка 2"></div><div class="photo-caption">Happy Bar & Grill🍴</div></div>
+        <div class="photo p3"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka3.jpg" alt="Снимка 3"></div><div class="photo-caption">Birthday🎉</div></div>
+        <div class="photo p4"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka4.jpg" alt="Снимка 4"></div><div class="photo-caption">Birthday🎁</div></div>
+        <div class="photo p5"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka5.jpg" alt="Снимка 5"></div><div class="photo-caption">Happy Bar & Grill Birthday🎂</div></div>
+
+        <div class="photo p6"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka8.jpg" alt="Снимка 8"></div><div class="photo-caption">Belgium❄️</div></div>
+        <div class="photo p7"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka14.jpg" alt="Снимка 14"></div><div class="photo-caption">Belgium New Years⭐</div></div>
+        <div class="photo p8"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka6.jpg" alt="Снимка 6"></div><div class="photo-caption">Sunny Beach☀️</div></div>
+                
+        <div class="photo p9"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka15.jpg" alt="Снимка 15"></div><div class="photo-caption">Old Nessebar🌊</div></div>
+        <div class="photo p10"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka7.jpg" alt="Снимка 7"></div><div class="photo-caption">Sunny Beach Restaurant🍴</div></div>
+        <div class="photo p11"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka9.jpg" alt="Снимка 9"></div><div class="photo-caption">ComicCon 2025🖤</div></div>
+        <div class="photo p12"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka10.jpg" alt="Снимка 10"></div><div class="photo-caption">Germany🎢</div></div>
+        <div class="photo p13"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka11.jpg" alt="Снимка 11"></div><div class="photo-caption">Nessebar first date💏</div></div>
+        <div class="photo p14"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka12.jpg" alt="Снимка 12"></div><div class="photo-caption">At home❤️</div></div>
+        <div class="photo p15"><div class="photo-img"><img src="assets/gifs&pics/snimki/snimka13.jpg" alt="Снимка 13"></div><div class="photo-caption">First meet💏</div></div>
+
+
+        <!-- ВИДЕА -->
+        <div class="videoCard v1">
+            <div class="photo-img"><img src="assets/gifs&pics/snimki/video1.gif" alt="GIF 1"></div>
+        </div>
+
+        <div class="videoCard v2">
+            <div class="photo-img"><img src="assets/gifs&pics/snimki/video2.gif" alt="GIF 2"></div>
+        </div>
+
+    </div>
+
+    <a href="menu.html" class="backBtn">← Назад към менюто</a>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">✕</button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    </div>
+
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightboxImg");
+        const lightboxClose = document.getElementById("lightboxClose");
+
+        const allImages = document.querySelectorAll(".photo-img img, .videoCard .photo-img img");
+
+        allImages.forEach(img => {
+            img.style.cursor = "zoom-in";
+            img.addEventListener("click", () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add("active");
+            });
+        });
+
+        lightboxClose.addEventListener("click", () => {
+            lightbox.classList.remove("active");
+            lightboxImg.src = "";
+        });
+
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove("active");
+                lightboxImg.src = "";
+            }
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") {
+                lightbox.classList.remove("active");
+                lightboxImg.src = "";
+            }
+        });
+    </script>
+    <script src="assets/scripts/sound-effects.js"></script>
+
+</body>
+</html>

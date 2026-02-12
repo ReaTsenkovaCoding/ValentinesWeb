@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="bg">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Sofia+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="assets/styles/letter.css"/>
+        <title>Въпрос 💕</title>
+    </head>
+
+    <body>
+        <div class = "container">
+            <div class = "card">
+                <div class = "emoji">💌</div>
+                <h1>Ще ми бъдеш ли<br>валентинка?</h1>
+
+                <div class = "buttons">
+                    <a href = "yes.html" class = "btn yesBtn">ДА!💕</a>
+                    <button class = "btn noBtn" id = "noBtn" >не.💔</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const noBtn = document.getElementById('noBtn');
+
+            noBtn.addEventListener('mouseenter', runAway); // когато мишката се доближи
+            noBtn.addEventListener('touchstart', runAway); //когато го докоснеш с пръст на мобилно устройство
+
+            function runAway() {
+                const maxX = window.innerWidth - noBtn.offsetWidth - 20; // изчисляваме максималните координати, за да не излезе от екрана
+                const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+
+                const randomX = Math.floor(Math.random() * maxX); //закръгляме до цяло число и генерираме случайни координати за позицията на бутона
+                const randomY = Math.floor(Math.random() * maxY);
+
+                noBtn.style.position = 'fixed';
+                noBtn.style.left = randomX + 'px';
+                noBtn.style.top = randomY + 'px';
+                noBtn.style.margin = '0';
+                noBtn.style.zIndex = '999';
+            }
+        </script>
+        <script src="assets/scripts/sound-effects.js"></script>
+
+    </body>
+</html>

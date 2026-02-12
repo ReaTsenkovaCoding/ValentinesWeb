@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bg">
+    <head> 
+        <meta charset = "UTF-8"/>
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+
+        <link rel = "preconnect" href = "https://fonts.googleapis.com"/>
+        <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin/>
+        <link href = "https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+        <title>УРААА❤️</title>
+        <link rel = "stylesheet" href = "assets/styles/yes.css"/>
+    </head>
+
+    <body>
+        <main style = "
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            padding: 48px;
+            text-align: center;
+        ">
+
+        <!--GIF-->
+        <div class = "yesGif floatIn">
+            <img src = "assets/gifs&pics/yes.gif" alt = "yes gif"/>
+        </div>
+
+        <!--TEXT-->
+        <div class = "leftText floatIn textAnimation">
+            <h1 class = "floatIn titleAnimation">УРААААААААААА!!!!!!!!!!!!!!!<br> ❤️</h1>
+        </div>
+
+        <a href="menu.html" class="backBtn">← Назад към менюто</a>
+        </main>
+
+        <script>
+            const emojis = ['🎈', '🎀', '💕', '❤️', '🩷'];
+
+            function createBalloon() {
+                const balloon = document.createElement('div');
+                balloon.classList.add('balloon');
+
+                // Random емоджи от масива
+                balloon.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+                // Random хоризонтална позиция
+                balloon.style.left = Math.random() * 100 + 'vw';
+
+                // Random размер (30px до 60px)
+                const size = Math.random() * 30 + 30;
+                balloon.style.fontSize = size + 'px';
+
+                // Random скорост (4s до 8s)
+                const duration = Math.random() * 4 + 4;
+                balloon.style.animationDuration = duration + 's';
+
+                document.body.appendChild(balloon);
+
+                // Изтрива балона след като излезе от екрана
+                setTimeout(() => balloon.remove(), duration * 1000);
+            }
+
+            // Нов балон на всеки 400ms
+            setInterval(createBalloon, 400);
+        </script>
+    <script src="assets/scripts/sound-effects.js"></script>
+
+    </body>
+</html>

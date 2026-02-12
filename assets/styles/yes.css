@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: "Sofia Sans", sans-serif;
+    background: #ffffff;
+    min-height: 100vh;
+    padding: 0 32px 64px;
+}
+
+h1{
+  margin: 0 0 12px;
+  font-size: 76px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  word-break: break-word;   /* разрешава пренасяне */
+  overflow-wrap: break-word;
+  max-width: 100%;
+  
+}
+
+.titleAnimation{ animation-delay: .20s;}
+
+.backBtn {
+    display: block;
+    max-width: 280px;
+    margin: 10px auto 0;
+    padding: 18px 40px;
+    background: #fff4f9;
+    color: #a3375d;
+    text-decoration: none;
+    border-radius: 32px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(74, 30, 52, 0.402);
+
+}
+
+.floatIn{
+  opacity:0;
+  transform: translateY(28px);
+  animation: floatIn .6s ease forwards;
+}
+
+@keyframes floatIn {
+
+  from{
+    opacity:0;
+    transform: translateY(28px);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}
+
+.backBtn:hover {
+    background: #ffc8ed;
+    box-shadow: 0 12px 30px rgba(49, 23, 35, 0.5);
+    transform: scale(1.12);
+}
+
+/* ===========================
+   БАЛОНИ
+=========================== */
+
+.balloon {
+    position: fixed;
+    bottom: -80px;          /* започва под екрана */
+    pointer-events: none;   /* не пречи на кликовете */
+    animation: floatUp linear forwards;
+    z-index: 999;
+    user-select: none; 
+}
+
+@keyframes floatUp {
+    0% {
+        bottom: -80px;
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    /* Леко люлеене наляво-надясно докато се вдига */
+    25% { transform: translateX(20px); }
+    50% { transform: translateX(-20px); }
+    75% { transform: translateX(15px); }
+    100% {
+        bottom: 110vh;      /* излиза над екрана */
+        transform: translateX(0px);
+        opacity: 0;
+    }
+}
+
+/* ===========================
+   RESPONSIVE (MOBILE)
+=========================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0 16px 48px;
+    }
+
+    /* По-малък текст на телефон */
+    h1 {
+        font-size: 48px;
+    }
+
+    /* GIF да не излиза от екрана */
+    .yesGif img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Бутонът да е по-компактен */
+    .backBtn {
+        font-size: 17px;
+        padding: 14px 28px;
+        max-width: 220px;
+    }
+
+    /* По-малки балони на телефон */
+    .balloon {
+        font-size: 24px !important;
+    }
+}

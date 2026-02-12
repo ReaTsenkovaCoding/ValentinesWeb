@@ -1,0 +1,362 @@
+/* ===========================
+   COLLAGE PAGE STYLES
+=========================== */
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+
+body{
+    font-family: "Sofia Sans", sans serif;
+   background: linear-gradient(180deg, #fff4f9 0%, #a3375d 100%);
+    min-height: 100vh;
+    padding: 80px 32px 64px;
+
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+    margin-left: 100px;
+    animation: fadeDown 2s ease;
+}
+
+.header h1{
+    font-family: "Caveat", cursive;
+    font-size: 100px;
+    font-weight: 700;
+    color: #2b1f25;
+
+}
+
+.header p{
+    font-size: 28px;
+    color: #b4879d;
+    margin-top: 8px;
+    margin-right: 100px;
+    animation: fadeDown 1s ease;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+     
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.heartImg {
+    position: absolute;
+    top: 450px;
+    left: 100px;
+    width: 90px;
+    rotate: -15deg;
+    opacity: 0.5;
+}
+.heartImg1 {
+    position: absolute;
+    top: 650px;
+    right: 100px;
+    width: 90px;
+    rotate: 15deg;
+    opacity: 0.5;
+}
+
+.heartImg2 {
+    position: absolute;
+    top: 1250px;
+    left: 100px;
+    width: 90px;
+    rotate: -30deg;
+    opacity: 0.5;
+}
+
+.heartImg3 {
+    position: absolute;
+    top: 1550px;
+    right: 100px;
+    width: 90px;
+    rotate: 40deg;
+    opacity: 0.5;
+}
+
+.heartImg4 {
+    position: absolute;
+    top: 2000px;
+    left: 100px;
+    width: 90px;
+    rotate: 10deg;
+    opacity: 0.5;
+}
+
+.heartImg5 {
+    position: absolute;
+    top: 2400px;
+    right: 110px;
+    width: 90px;
+    rotate: -20deg;
+    opacity: 0.5;
+}
+
+
+/* ===========================
+   BOARD - свободно поле
+=========================== */
+
+.board {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-left: 15%;
+    height: 1800px;
+}
+
+/* ===========================
+   СНИМКИ - обща стилизация
+=========================== */
+
+.photo {
+    background: white;
+    padding: 12px 12px 48px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    position: absolute;
+    width: 260px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: popIn 0.8s ease backwards;
+    animation-delay: 0.2s;
+    cursor: pointer;
+    will-change: transform;
+}
+
+.photo:hover {
+    transform: rotate(0deg) scale(1.12) translateY(-8px) !important;
+    box-shadow: 0 12px 30px rgba(49, 23, 35, 0.5);
+    z-index: 20;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; }
+}
+.photo-img {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #ffd4e8 0%, #ffb3d4 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    overflow: hidden;
+}
+
+/* Когато добавиш истинска снимка */
+.photo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 8px 12px 12px;
+    font-family: "Caveat", cursive;
+    font-size: 20px;
+    color: #5a3040;
+}
+
+/* ===========================
+   ПОЗИЦИИ НА СНИМКИТЕ
+   top = разстояние от горе
+   left = разстояние от ляво
+   transform = ротация
+=========================== */
+
+.p1  { top: 0px;    left: 0%;   transform: rotate(-4deg); animation-delay: 3.5s; }
+.p2  { top: 30px;   left: 28%;  transform: rotate(3deg);  animation-delay: 3.8s; }
+.p3  { top: 0px;    left: 56%;  transform: rotate(-2deg); animation-delay: 4.1s; }
+.p4  { top: 0px;    left: 87%;  transform: rotate(5deg);  animation-delay: 4.4s; }
+
+.p5  { top: 340px;  left: 4%;   transform: rotate(4deg);  animation-delay: 4.7s; }
+.p6  { top: 360px;  left: 32%;  transform: rotate(-3deg); animation-delay: 5.0s; }
+.p7  { top: 330px;  left: 57%;  transform: rotate(2deg);  animation-delay: 5.3s; }
+.p8  { top: 350px;  left: 84%;  transform: rotate(-5deg); animation-delay: 5.6s; }
+
+.p9  { top: 700px;  left: 2%;   transform: rotate(-2deg); animation-delay: 5.9s; }
+.p10 { top: 720px;  left: 30%;  transform: rotate(4deg);  animation-delay: 6.2s; }
+.p11 { top: 690px;  left: 56%;  transform: rotate(-3deg); animation-delay: 6.5s; }
+.p12 { top: 710px;  left: 82%;  transform: rotate(2deg);  animation-delay: 6.8s; }
+
+.p13 { top: 1060px; left: 13%;   transform: rotate(3deg);  animation-delay: 7.1s; }
+.p14 { top: 1080px; left: 43%;  transform: rotate(-4deg); animation-delay: 7.4s; }
+.p15 { top: 1050px; left: 70%;  transform: rotate(5deg);  animation-delay: 7.7s; }
+
+/* ===========================
+   ВИДЕО КАРТИ
+=========================== */
+
+.videoCard {
+    background: white;
+    padding: 12px; /*рамка на видеото*/
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    position: absolute;
+    width: 560px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: popIn 1s ease backwards;
+    cursor: pointer;
+}
+
+.videoCard:hover {
+    transform: rotate(0deg) scale(1.12) translateY(-8px) !important;
+    box-shadow: 0 12px 30px rgba(49, 23, 35, 0.5);
+    z-index: 20;
+}
+
+/* Позиции на видеата - след всички снимки */
+.v1 {
+    top: 1440px;
+    transform: rotate(-2deg);
+    animation-delay: 8s;
+}
+
+.v2 {
+    top: 1450px;
+    left: 60%;
+    transform: rotate(3deg);
+    animation-delay: 8.3s;
+}
+
+/* ===========================
+   БУТОН НАЗАД
+=========================== */
+
+.backBtn {
+    display: block;
+    max-width: 280px;
+    margin: 400px auto 0;
+    padding: 18px 40px;
+    background: #fff4f9;
+    color: #a3375d;
+    text-decoration: none;
+    border-radius: 32px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 193, 223, 0.402);
+}
+
+.backBtn:hover {
+    background: #ffc8ed;
+    transform: scale(1.12);
+    box-shadow: 0 12px 30px rgba(49, 23, 35, 0.5);
+}
+
+
+
+/* ===========================
+   LIGHTBOX
+=========================== */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    /* Тъмен полупрозрачен фон */
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.2s ease;
+}
+
+/* active клас го показва */
+.lightbox.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Уголемената снимка */
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    animation: zoomIn 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Хикс бутон горе вляво */
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    left: 24px;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+    color: #2b1f25;
+    z-index: 1001;
+}
+
+.lightbox-close:hover {
+    background: #ffc8ed88;
+    transform: scale(1.12);
+}
+
+/* ===========================
+   RESPONSIVE (MOBILE)
+=========================== */
+
+@media (max-width: 800px) {
+    body { padding: 40px 20px 60px; }
+
+    .header h1 { font-size: 48px; }
+
+    /* На телефон - нормален поток вместо absolute */
+    .board {
+        height: auto;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+
+    .photo {
+        position: static !important;
+        width: 100%;
+        max-width: 300px;
+        transform: none !important;
+    }
+
+    .videoCard {
+        position: static !important;
+        width: 100%;
+        max-width: 360px;
+        transform: none !important;
+    }
+
+    .backBtn { margin-top: 60px;}
+}

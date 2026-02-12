@@ -1,0 +1,120 @@
+/* ===========================
+   LETTER PAGE STYLES
+=========================== */
+
+*{ box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "Sofia Sans", sans-serif;
+    background: linear-gradient(180deg, #fff4f9 0%, #a3375d 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 32px 120px;
+    overflow: hidden;
+}
+
+/* ===========================
+   КАРТИЧКАТА
+=========================== */
+
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 60px 72px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(163, 55, 93, 0.2);
+    animation: popIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-width: 560px;
+    width: 100%;
+
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.emoji {
+    font-size: 80px;
+    margin-bottom: 24px;
+}
+
+/* Въпросът */
+.card h1 {
+    font-family: "Caveat", cursive;
+    font-size: 56px;
+    font-weight: 700;
+    color: #2b1f25;
+    line-height: 1.2;
+    margin-bottom: 48px;
+}
+
+/* ===========================
+   БУТОНИ
+=========================== */
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    padding: 16px 40px;
+    border-radius: 32px;
+    font-family: "Sofia Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.yesBtn {
+    background: #a3375d;
+    color: white;
+    box-shadow: 0 12px 30px rgba(163, 55, 93, 0.5);
+}
+
+.yesBtn:hover {
+    background: #8b2d4f;
+    transform: scale(1.2);
+    box-shadow: 0 12px 30px rgba(163, 55, 93, 0.5);
+}
+
+/* НЕ бутон */
+.noBtn {
+    background: #fdf5ff;
+    color: #2b1f25;
+    box-shadow: 0 12px 30px rgba(163, 55, 93, 0.463);
+    /* cursor: default е умишлено — не искаме да изглежда кликаем */
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 600px) {
+    .card {
+        padding: 40px 28px;
+    }
+
+    .card h1 {
+        font-size: 40px;
+    }
+
+    .emoji {
+        font-size: 60px;
+    }
+
+    .btn {
+        padding: 14px 28px;
+        font-size: 18px;
+    }
+}

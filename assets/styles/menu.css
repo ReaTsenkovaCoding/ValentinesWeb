@@ -1,0 +1,122 @@
+ *{ box-sizing: border-box; }
+    body{
+        margin: 0;
+        font-family: "Sofia Sans", sans-serif;
+    }
+
+    .menuPage {
+        min-height: 100vh;
+        background: #f0dcef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 64px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .menuPage h1 {
+        margin: 0;
+        font-size: 68px;
+        font-weight: 900;
+        color: #2b1f25;
+        text-align: center;
+        z-index: 10;
+        animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+        from { 
+            opacity: 0; 
+            transform: translateY(-30px); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+
+    .menuBtn {
+        width: 200px;
+        height: 200px;
+        border-radius: 50% ;
+        border: 3px solid rgba(0, 0, 0, 0.365);
+        background: white;
+        font-size: 72px;
+        cursor: pointer;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 15px 4px rgba(180, 135, 157, 0.131);
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: absolute;
+        animation: popInRotate 1s ease backwards;
+    }
+
+    .menuBtn:nth-child(1) {
+        top: 18%;
+        left: 10%;
+        transform: rotate(-12deg);
+        animation-delay: 1.5s;
+    }
+
+    .menuBtn:nth-child(2) {
+        top: 25%;
+        right: 12%;
+        transform: rotate(15deg);
+        animation-delay: 1.8s;
+    }
+
+    .menuBtn:nth-child(3) {
+        bottom: 15%;
+        left: 22%;
+        transform: rotate(-8deg);
+        animation-delay: 2.1s;
+    }
+
+     @keyframes popInRotate {
+        from { 
+        opacity: 0; 
+        transform: scale(0.3) rotate(0deg); 
+        }
+        to { 
+        opacity: 1; 
+        transform: scale(1) rotate(inherit); 
+        }
+    }
+
+    .menuBtn:hover {
+        background: #ffddf4;
+        transform: scale(1.15) rotate(0deg) !important;
+        box-shadow: 0 0 14px rgba(152, 88, 154, 0.502);
+        z-index: 20;
+    }
+
+    @media (max-width: 768px) {
+        .menuPage {
+            padding: 48px 32px;
+        }
+        .menuPage h1 {
+            font-size: 44px;
+        }
+        .menuBtn {
+            width: 120px;
+            height: 120px;
+            font-size: 56px;
+        }
+        .menuBtn:nth-child(1) {
+            top: 12%;
+            left: 5%;
+            transform: rotate(-8deg);
+        }
+        .menuBtn:nth-child(2) {
+            top: 15%;
+            right: 8%;
+            transform: rotate(10deg);
+        }
+      .menuBtn:nth-child(3) {
+            bottom: 12%;
+            left: 50%;
+            transform: translateX(-50%) rotate(-5deg);
+      }
+    }

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <title>За bebussy 💘</title>
+  <link rel="stylesheet" href="assets/styles/style.css"/>
+</head>
+
+<body class="pink">
+  <main class="split">
+
+    <!-- LEFT SIDE: GIF + text -->
+    <section class="left">
+      <div class="gifBox">
+        <img src="assets/gifs&pics/giphy.gif" alt="cute gif">
+      </div>
+
+      <div class="leftText">
+        <h1 class = "floatIn titleAnimation">Само за твоите очи 💘</h1>
+        <p class="sub1 floatIn subAnimation">Въведи нашия код, за да продължиш.</p>
+      </div>
+    </section>
+
+    <!-- RIGHT SIDE: keypad -->
+    <section class="right">
+      <form id="lockForm" class="lock" novalidate>
+        <div id="dots" class="dots" aria-label="PIN">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+
+        <div class="keypad" aria-label="Keypad">
+          <button type="button" class="key" data-digit="1">1</button>
+          <button type="button" class="key" data-digit="2">2</button>
+          <button type="button" class="key" data-digit="3">3</button>
+
+          <button type="button" class="key" data-digit="4">4</button>
+          <button type="button" class="key" data-digit="5">5</button>
+          <button type="button" class="key" data-digit="6">6</button>
+
+          <button type="button" class="key" data-digit="7">7</button>
+          <button type="button" class="key" data-digit="8">8</button>
+          <button type="button" class="key" data-digit="9">9</button>
+
+          <button type="button" class="key ghost" id="clearBtn">C</button>
+          <button type="button" class="key" data-digit="0">0</button>
+          <button type="button" class="key ghost" id="backBtn">⌫</button>
+        </div>
+
+        <button type="submit" class="enterBtn">Enter</button>
+      </form>
+    </section>
+  </main>
+  <script src="assets/scripts/app.js"></script>
+  <script src="assets/scripts/sound-effects.js"></script>
+</body>
+</html>

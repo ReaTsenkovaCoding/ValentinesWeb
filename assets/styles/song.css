@@ -1,0 +1,320 @@
+/* ===========================
+   SONG PAGE STYLES
+=========================== */
+
+* { 
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    font-family: "Sofia Sans", sans-serif;
+    background: linear-gradient(180deg, #fff4f9 0%, #a3375d 100%);
+    min-height: 100vh;
+    padding: 80px 32px 64px;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.header {
+    text-align: center;
+    margin-bottom: 80px;
+    animation: fadeDown 2s ease;
+}
+
+.header h1 {
+    margin: 0;
+    font-family: "Caveat", cursive;
+    font-size: 100px;
+    font-weight: 700;
+    color: #2b1f25;
+}
+
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* ===========================
+   HANGING SONGS CONTAINER
+=========================== */
+
+.hangingSongs {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 90px 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 120px 20px;
+}
+
+/* ===========================
+   VIDEO WRAPPER (thread + card)
+=========================== */
+
+.videoWrapper {
+    position: relative;
+    animation: sway 3s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+/* Различна височина за всяка песен */
+.videoWrapper:nth-child(1) { animation-delay: 0s; margin-top: 0; }
+.videoWrapper:nth-child(2) { animation-delay: 0.3s; margin-top: 40px; }
+.videoWrapper:nth-child(3) { animation-delay: 0.6s; margin-top: 20px; }
+.videoWrapper:nth-child(4) { animation-delay: 0.9s; margin-top: 60px; }
+.videoWrapper:nth-child(5) { animation-delay: 1.2s; margin-top: 30px; }
+.videoWrapper:nth-child(6) { animation-delay: 1.5s; margin-top: 50px; }
+.videoWrapper:nth-child(7) { animation-delay: 1.8s; margin-top: 10px; }
+.videoWrapper:nth-child(8) { animation-delay: 2.1s; margin-top: 45px; }
+.videoWrapper:nth-child(9) { animation-delay: 2.4s; margin-top: 25px; }
+.videoWrapper:nth-child(10) { animation-delay: 2.7s; margin-top: 55px; }
+.videoWrapper:nth-child(11) { animation-delay: 3s; margin-top: 15px; }
+.videoWrapper:nth-child(12) { animation-delay: 3.3s; margin-top: 35px; }
+.videoWrapper:nth-child(13) { animation-delay: 3.6s; margin-top: 5px; }
+.videoWrapper:nth-child(14) { animation-delay: 3.9s; margin-top: 50px; }
+.videoWrapper:nth-child(15) { animation-delay: 4.2s; margin-top: 30px; }
+.videoWrapper:nth-child(16) { animation-delay: 4.5s; margin-top: 40px; }
+.videoWrapper:nth-child(17) { animation-delay: 4.8s; margin-top: 20px; }
+.videoWrapper:nth-child(18) { animation-delay: 5.1s; margin-top: 60px; }
+.videoWrapper:nth-child(19) { animation-delay: 5.4s; margin-top: 25px; }
+.videoWrapper:nth-child(20) { animation-delay: 5.7s; margin-top: 45px; }
+.videoWrapper:nth-child(21) { animation-delay: 6s; margin-top: 15px; }
+.videoWrapper:nth-child(22) { animation-delay: 6.3s; margin-top: 55px; }
+.videoWrapper:nth-child(23) { animation-delay: 6.6s; margin-top: 35px; }
+
+/* Люлеене наляво-надясно */
+@keyframes sway {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    75% { transform: rotate(-2deg); }
+}
+
+/* ===========================
+   THREAD (нишка)
+=========================== */
+
+.thread {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 200px;
+    background: #ff8dc7;
+    animation: threadAppear 1s ease backwards;
+}
+
+/* Панделка отгоре на нишката */
+.thread::before {
+    content: '🎀';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    animation: bowSpin 1.5s ease backwards;
+}
+
+@keyframes bowSpin {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) rotate(-180deg) scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) rotate(0deg) scale(1);
+    }
+}
+
+/* Animation delays за нишките */
+.videoWrapper:nth-child(1) .thread { animation-delay: 2.1s; }
+.videoWrapper:nth-child(2) .thread { animation-delay: 2.4s; }
+.videoWrapper:nth-child(3) .thread { animation-delay: 2.7s; }
+.videoWrapper:nth-child(4) .thread { animation-delay: 3s; }
+.videoWrapper:nth-child(5) .thread { animation-delay: 3.3s; }
+.videoWrapper:nth-child(6) .thread { animation-delay: 3.6s; }
+.videoWrapper:nth-child(7) .thread { animation-delay: 3.9s; }
+.videoWrapper:nth-child(8) .thread { animation-delay: 4.2s; }
+.videoWrapper:nth-child(9) .thread { animation-delay: 4.5s; }
+.videoWrapper:nth-child(10) .thread { animation-delay: 4.8s; }
+.videoWrapper:nth-child(11) .thread { animation-delay: 5.1s; }
+.videoWrapper:nth-child(12) .thread { animation-delay: 5.4s; }
+.videoWrapper:nth-child(13) .thread { animation-delay: 5.7s; }
+.videoWrapper:nth-child(14) .thread { animation-delay: 6s; }
+.videoWrapper:nth-child(15) .thread { animation-delay: 6.3s; }
+.videoWrapper:nth-child(16) .thread { animation-delay: 6.6s; }
+.videoWrapper:nth-child(17) .thread { animation-delay: 6.9s; }
+.videoWrapper:nth-child(18) .thread { animation-delay: 7.2s; }
+.videoWrapper:nth-child(19) .thread { animation-delay: 7.5s; }
+.videoWrapper:nth-child(20) .thread { animation-delay: 7.8s; }
+.videoWrapper:nth-child(21) .thread { animation-delay: 8.1s; }
+.videoWrapper:nth-child(22) .thread { animation-delay: 8.4s; }
+.videoWrapper:nth-child(23) .thread { animation-delay: 8.7s; }
+
+/* Animation delays за панделките */
+.videoWrapper:nth-child(1) .thread::before { animation-delay: 2.3s; }
+.videoWrapper:nth-child(2) .thread::before { animation-delay: 2.6s; }
+.videoWrapper:nth-child(3) .thread::before { animation-delay: 2.9s; }
+.videoWrapper:nth-child(4) .thread::before { animation-delay: 3.2s; }
+.videoWrapper:nth-child(5) .thread::before { animation-delay: 3.5s; }
+.videoWrapper:nth-child(6) .thread::before { animation-delay: 3.8s; }
+.videoWrapper:nth-child(7) .thread::before { animation-delay: 4.1s; }
+.videoWrapper:nth-child(8) .thread::before { animation-delay: 4.4s; }
+.videoWrapper:nth-child(9) .thread::before { animation-delay: 4.7s; }
+.videoWrapper:nth-child(10) .thread::before { animation-delay: 5s; }
+.videoWrapper:nth-child(11) .thread::before { animation-delay: 5.3s; }
+.videoWrapper:nth-child(12) .thread::before { animation-delay: 5.6s; }
+.videoWrapper:nth-child(13) .thread::before { animation-delay: 5.9s; }
+.videoWrapper:nth-child(14) .thread::before { animation-delay: 6.2s; }
+.videoWrapper:nth-child(15) .thread::before { animation-delay: 6.5s; }
+.videoWrapper:nth-child(16) .thread::before { animation-delay: 6.8s; }
+.videoWrapper:nth-child(17) .thread::before { animation-delay: 7.1s; }
+.videoWrapper:nth-child(18) .thread::before { animation-delay: 7.4s; }
+.videoWrapper:nth-child(19) .thread::before { animation-delay: 7.7s; }
+.videoWrapper:nth-child(20) .thread::before { animation-delay: 8s; }
+.videoWrapper:nth-child(21) .thread::before { animation-delay: 8.3s; }
+.videoWrapper:nth-child(22) .thread::before { animation-delay: 8.6s; }
+.videoWrapper:nth-child(23) .thread::before { animation-delay: 8.9s; }
+
+@keyframes threadAppear {
+    from { 
+        height: 0; 
+        opacity: 0; 
+    }
+    to { 
+        height: 200px; 
+        opacity: 1; 
+    }
+}
+
+/* ===========================
+   VIDEO CARD (картичка)
+=========================== */
+
+.videoCard {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(180, 135, 157, 0.25);
+    transition: all 0.4s ease;
+    width: 360px;
+    animation: cardDrop 1s ease backwards;
+}
+
+/* Animation delays за картичките */
+.videoWrapper:nth-child(1) .videoCard { animation-delay: 2.3s; }
+.videoWrapper:nth-child(2) .videoCard { animation-delay: 2.6s; }
+.videoWrapper:nth-child(3) .videoCard { animation-delay: 2.9s; }
+.videoWrapper:nth-child(4) .videoCard { animation-delay: 3.2s; }
+.videoWrapper:nth-child(5) .videoCard { animation-delay: 3.5s; }
+.videoWrapper:nth-child(6) .videoCard { animation-delay: 3.8s; }
+.videoWrapper:nth-child(7) .videoCard { animation-delay: 4.1s; }
+.videoWrapper:nth-child(8) .videoCard { animation-delay: 4.4s; }
+.videoWrapper:nth-child(9) .videoCard { animation-delay: 4.7s; }
+.videoWrapper:nth-child(10) .videoCard { animation-delay: 5s; }
+.videoWrapper:nth-child(11) .videoCard { animation-delay: 5.3s; }
+.videoWrapper:nth-child(12) .videoCard { animation-delay: 5.6s; }
+.videoWrapper:nth-child(13) .videoCard { animation-delay: 5.9s; }
+.videoWrapper:nth-child(14) .videoCard { animation-delay: 6.2s; }
+.videoWrapper:nth-child(15) .videoCard { animation-delay: 6.5s; }
+.videoWrapper:nth-child(16) .videoCard { animation-delay: 6.8s; }
+.videoWrapper:nth-child(17) .videoCard { animation-delay: 7.1s; }
+.videoWrapper:nth-child(18) .videoCard { animation-delay: 7.4s; }
+.videoWrapper:nth-child(19) .videoCard { animation-delay: 7.7s; }
+.videoWrapper:nth-child(20) .videoCard { animation-delay: 8s; }
+.videoWrapper:nth-child(21) .videoCard { animation-delay: 8.3s; }
+.videoWrapper:nth-child(22) .videoCard { animation-delay: 8.6s; }
+.videoWrapper:nth-child(23) .videoCard { animation-delay: 8.9s; }
+
+@keyframes cardDrop {
+    from { 
+        opacity: 0; 
+        transform: translateY(-80px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.videoCard:hover {
+    transform: scale(1.12) translateY(-8px);
+    box-shadow: 0 10px 14px rgba(73, 30, 51, 0.802);
+}
+
+/* Spotify iframe */
+.videoCard iframe {
+    width: 100%;
+    border: none;
+    display: block;
+}
+
+/* ===========================
+   BACK BUTTON
+=========================== */
+
+.backBtn {
+    display: block;
+    max-width: 280px;
+    margin: 80px auto 0;
+    padding: 18px 40px;
+    background: #fff4f9;
+    color: #a3375d;
+    text-decoration: none;
+    border-radius: 32px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 193, 223, 0.402);
+}
+
+.backBtn:hover {
+    background: #ffc8ed;
+    transform: scale(1.12);
+    box-shadow: 0 12px 30px rgba(49, 23, 35, 0.5);
+}
+
+/* ===========================
+   RESPONSIVE (MOBILE)
+=========================== */
+
+@media (max-width: 843px) {
+    body { 
+        padding: 60px 20px 48px;
+    }
+    
+    .header h1 { 
+        font-size: 36px; 
+    }
+    
+    .hangingSongs { 
+        gap: 40px; 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    .videoWrapper { 
+        margin-top: 0px !important;
+    }
+    
+    .videoCard { 
+        width: 100%; 
+        max-width: 360px; 
+    }
+    
+    .thread { 
+        height: 100px; 
+        top: -100px; 
+    }
+    
+    .thread::before { 
+        font-size: 20px; 
+    }
+}
