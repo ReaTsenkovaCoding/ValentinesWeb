@@ -1,6 +1,6 @@
 ﻿# 🎀🎁 Valentine's Cute Website 🎁🎀
 
-⚡🔗 **Live:**: https://reatsenkovacoding.github.io/ValentinesDayCuteWebsite/ 🟢
+🔗 **Live:**: https://reatsenkovacoding.github.io/ValentinesDayCuteWebsite/ 🟢
 
 A personalized, interactive Valentine's Day experience — built with pure HTML, CSS & JavaScript. PIN-locked, multi-page, and made with love.
 
