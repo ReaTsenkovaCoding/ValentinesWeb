@@ -36,7 +36,7 @@ ValentinesDayCuteWebsite/
 
 ---
 
-## 🛠️ Tech Stack 🛠️
+## 🛠️ Tech Stack 
 
 - **HTML5** — structure
 - **CSS3** — styling, animations
@@ -44,6 +44,6 @@ ValentinesDayCuteWebsite/
 
 ---
 
-## 👩‍💻 Author 👩‍💻
+## 👩‍💻 Author 
 
 Made with 💗 by [ReaTsenkovaCoding](https://github.com/ReaTsenkovaCoding)
